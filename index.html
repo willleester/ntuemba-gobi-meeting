@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>戈友會常委會議 11/23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+/* Layout: single reading column (max 860px), meeting card on top, three agenda sections, charter quick-reference at the end */
+:root{
+  --bg:#F2F3F0; --surface:#FFFFFF; --ink:#1E2330; --muted:#5B6170; --line:#D9DBD4;
+  --accent:#2C5A87; --accent-soft:#E3EBF3; --sand:#B07A31; --sand-soft:#F4EAD9;
+  --ok:#2F7A52; --ok-soft:#E1F0E7; --wait:#9A6A12; --wait-soft:#F7EDD3;
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;
+  --f-num:"Space Grotesk","Noto Sans TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171D; --surface:#1C2028; --ink:#E7E5E0; --muted:#A1A6B1; --line:#2D323C;
+  --accent:#86ADD8; --accent-soft:#23303F; --sand:#D8A35A; --sand-soft:#33291B;
+  --ok:#72BE92; --ok-soft:#1C3127; --wait:#E0B65C; --wait-soft:#352B16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171D; --surface:#1C2028; --ink:#E7E5E0; --muted:#A1A6B1; --line:#2D323C;
+  --accent:#86ADD8; --accent-soft:#23303F; --sand:#D8A35A; --sand-soft:#33291B;
+  --ok:#72BE92; --ok-soft:#1C3127; --wait:#E0B65C; --wait-soft:#352B16; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h1{font-size:clamp(26px,5vw,36px)}
+h2{font-size:clamp(22px,4vw,27px)}
+h3{font-size:18px;font-family:var(--f-body);font-weight:700}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:13px;letter-spacing:.12em;color:var(--sand);font-weight:700}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+/* header */
+header{display:grid;gap:20px}
+.meet{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px 28px}
+.meet .k{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.meet .v{font-size:20px;font-weight:700}
+.meet .v small{font-size:14px;font-weight:500;color:var(--muted)}
+.count{font-size:14px;color:var(--accent);font-weight:500}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px}
+nav.toc a{text-decoration:none;font-size:14px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:var(--surface)}
+nav.toc a:hover{border-color:var(--accent);color:var(--accent)}
+
+section{margin-top:56px;display:grid;gap:20px}
+.sec-head{display:grid;gap:6px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.lead{font-size:16px;color:var(--muted);max-width:62ch}
+
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:12px;min-width:0}
+.box.tint{background:var(--accent-soft);border-color:transparent}
+.box.sand{background:var(--sand-soft);border-color:transparent}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+ul.clean,ol.clean{margin:0;padding-left:1.3em;display:grid;gap:6px}
+ol.clean li::marker{font-family:var(--f-num);color:var(--sand);font-weight:700}
+
+/* attendance */
+.stat{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.wait{background:var(--wait-soft);color:var(--wait)}
+.gens{display:flex;flex-wrap:wrap;gap:8px}
+.gen-chip{font-family:var(--f-num);font-size:15px;font-weight:700;padding:4px 14px}
+.chip.empty{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:.04em;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.gen{font-family:var(--f-num);font-weight:700;white-space:nowrap}
+.cls{color:var(--muted);font-size:13px}
+
+/* timeline */
+.steps{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps .when{font-family:var(--f-num);font-weight:700;color:var(--accent)}
+.steps .now .when{color:var(--sand)}
+@media (max-width:520px){.steps li{grid-template-columns:1fr;gap:2px}}
+
+/* questions */
+.qs{display:grid;gap:10px;counter-reset:q;margin:0;padding:0;list-style:none}
+.qs li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start}
+.qs li::before{counter-increment:q;content:counter(q);font-family:var(--f-num);font-weight:700;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--surface);font-size:14px;margin-top:2px}
+.qs b{font-weight:700}
+
+/* route */
+.route{display:flex;gap:3px;border-radius:8px;overflow:hidden}
+.route div{background:var(--sand);color:var(--surface);padding:8px 6px;font-size:13px;line-height:1.3;min-width:0}
+.route div:nth-child(even){background:color-mix(in srgb,var(--sand) 78%,var(--ink))}
+.route b{font-family:var(--f-num);font-size:16px;display:block}
+.route-legend{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);gap:4px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.fact{border-left:3px solid var(--sand);padding-left:12px}
+.fact .n{font-family:var(--f-num);font-size:24px;font-weight:700;line-height:1.2}
+.fact .l{font-size:13px;color:var(--muted)}
+
+.flag{display:inline-block;font-size:12px;font-weight:700;color:var(--wait);background:var(--wait-soft);border-radius:4px;padding:0 6px;margin-left:4px;vertical-align:1px}
+
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 20px}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:700}
+details[open] summary{margin-bottom:10px}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:grid;gap:4px}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">台大EMBA戈友會 · 常委會議暨聚餐</div>
+  <h1>會前資料：三個議題先看懂</h1>
+  <p class="lead">這頁整理了會議時間地點、各屆出席狀況，以及三個議題的背景、章程依據和想聽大家意見的問題。開會前花 10 分鐘看過，當天討論可以更聚焦。</p>
+
+  <div class="meet">
+    <div>
+      <div class="k">時間</div>
+      <div class="v"><span class="num">11/23</span>（一）<span class="num">18:30</span></div>
+      <div class="count" id="countdown"></div>
+    </div>
+    <div>
+      <div class="k">地點</div>
+      <div class="v">潮品集 忠孝店</div>
+      <a class="small" href="https://www.google.com/maps/search/?api=1&query=%E6%BD%AE%E5%93%81%E9%9B%86+%E5%BF%A0%E5%AD%9D%E5%BA%97" target="_blank" rel="noopener">在 Google 地圖開啟</a>
+    </div>
+    <div>
+      <div class="k">出席狀況（截至 11/21）</div>
+      <div class="v"><span class="num">9</span> 屆確認 <small>／<span class="num">5</span> 屆確認中</small></div>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="頁面目錄">
+    <a href="#attend">出席狀況</a>
+    <a href="#family">議題一 眷屬參與</a>
+    <a href="#ceibs">議題二 中歐賽事組隊</a>
+    <a href="#election">議題三 常委與會長改選</a>
+    <a href="#charter">章程速查</a>
+  </nav>
+</header>
+
+<!-- ATTENDANCE -->
+<section id="attend">
+  <div class="sec-head">
+    <div class="eyebrow">出席狀況</div>
+    <h2>各屆常委出席（截至 11/21）</h2>
+  </div>
+  <div class="grid2">
+    <div class="box">
+      <h3>確認出席 <span class="num">· 9 屆</span></h3>
+      <div class="gens"><span class="chip ok gen-chip">戈5</span><span class="chip ok gen-chip">戈6</span><span class="chip ok gen-chip">戈7</span><span class="chip ok gen-chip">戈8</span><span class="chip ok gen-chip">戈9</span><span class="chip ok gen-chip">戈11</span><span class="chip ok gen-chip">戈12</span><span class="chip ok gen-chip">戈14</span><span class="chip ok gen-chip">戈19</span></div>
+    </div>
+    <div class="box">
+      <h3>確認中 <span class="num">· 5 屆</span></h3>
+      <div class="gens"><span class="chip wait gen-chip">戈10</span><span class="chip wait gen-chip">戈13</span><span class="chip wait gen-chip">戈1518</span><span class="chip wait gen-chip">戈20</span><span class="chip wait gen-chip">戈21</span></div>
+    </div>
+  </div>
+  <p class="small muted">若有異動，請直接告知會長或總幹事。</p>
+</section>
+
+<!-- ISSUE 1 -->
+<section id="family">
+  <div class="sec-head">
+    <div class="eyebrow">議題一</div>
+    <h2>眷屬參與挑戰隊的資格</h2>
+    <p class="lead">這幾年挑戰隊有愈來愈多眷屬參加。建議把報名規則訂清楚，溝通或確認事情時才有明確的對口，避免彼此困擾。</p>
+  </div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>章程目前怎麼寫</h3>
+      <ul class="clean">
+        <li><b>正式會員</b>：台大EMBA在校生、校友<b>及其眷屬</b>，完成戈壁挑戰賽（A、B、C 隊）並繳交會費者</li>
+        <li><b>眷屬權益</b>：可參與本會舉辦的各項活動</li>
+        <li><b>選舉與被選舉權</b>：只限台大EMBA在校生或校友</li>
+      </ul>
+      <p class="small muted">章程沒有規定眷屬「報名挑戰隊」需要什麼條件。</p>
+    </div>
+    <div class="box sand">
+      <h3>提案方向</h3>
+      <p>眷屬要參加挑戰隊，須有<b>同屆</b>的台大EMBA學長姐（眷屬的家人）<b>也參加 A、B、C、T 其中一隊</b>。</p>
+      <p class="small">好處：遇到溝通、確認或突發狀況時，隊上有一位熟悉戈友會的學長姐可以直接協調。</p>
+    </div>
+  </div>
+
+  <div class="box tint">
+    <h3>想聽大家的意見</h3>
+    <ul class="qs">
+      <li><span><b>眷屬的範圍</b>：配偶、子女、父母都算嗎？需不需要關係證明？</span></li>
+      <li><span><b>同屆同行是否必要</b>：學長姐以前已經參加過、這屆不下場，眷屬可以單獨報名嗎？</span></li>
+      <li><span><b>可以參加哪幾隊</b>：A、B、C、T 都開放，還是有限制？</span></li>
+      <li><span><b>名額上限</b>：每屆眷屬人數或比例要不要設上限？</span></li>
+      <li><span><b>學長姐的角色</b>：負責哪些事？訓練出席、紀律、安全都由學長姐對口嗎？</span></li>
+      <li><span><b>費用與保險</b>：報名費、保險、訓練要求是否與隊員相同？</span></li>
+      <li><span><b>規則放哪裡</b>：修訂章程，還是寫進挑戰隊報名須知？</span></li>
+    </ul>
+  </div>
+  <p class="small muted">參考：中歐（商學院戈壁友誼賽）規定所有組別隊員都必須是商學院學員，並附學籍證明，不開放眷屬報名。</p>
+</section>
+
+<!-- ISSUE 2 -->
+<section id="ceibs">
+  <div class="sec-head">
+    <div class="eyebrow">議題二</div>
+    <h2>2027 年中歐賽事參賽及組隊規劃</h2>
+    <p class="lead">今年初曾評估過，但時間太趕而作罷。目前戈5學長姐有興趣組隊。以下依 2026 年（友26）賽事手冊整理，請大家討論是否成立「中歐賽事組隊小組」。</p>
+  </div>
+
+  <div class="box">
+    <h3>友26 賽事快覽</h3>
+    <div class="facts">
+      <div class="fact"><div class="n">4/29–5/4</div><div class="l">2026 年賽期（領物 2 天 + 比賽 4 天）</div></div>
+      <div class="fact"><div class="n">121 km</div><div class="l">接力、競速、毅行組全程</div></div>
+      <div class="fact"><div class="n">58 km</div><div class="l">探索組，3 天體驗不計排名</div></div>
+      <div class="fact"><div class="n">甘肅瓜州</div><div class="l">敦煌機場接送，營地住大帳</div></div>
+    </div>
+    <div class="route" aria-label="121 公里四日賽段">
+      <div style="flex:28"><b>28</b>D1 阿育王寺→常樂驛</div>
+      <div style="flex:35"><b>35</b>D2 →六工城</div>
+      <div style="flex:32"><b>32</b>D3 →風車陣</div>
+      <div style="flex:26"><b>26</b>D4 →白墩子</div>
+    </div>
+    <p class="small muted">主辦：商學院戈壁運動委員會發起，瓜州向上賽事管理公司承辦。</p>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th>組別</th><th>人數</th><th>組隊方式</th><th>重點限制</th></tr></thead>
+      <tbody>
+        <tr><td><b>接力組</b> R</td><td class="num">7–10</td><td>院校名義，EMBA、MBA 各限一隊；或跨校聯合隊（邀請制）</td><td>至少 3 女 4 男；代表院校的接力隊員只能參加一屆；全員救護員證</td></tr>
+        <tr><td><b>競速組</b> S</td><td class="num">6–12</td><td>院校名義，EMBA、MBA 各限一隊</td><td>隊員只能參加一屆；全員救護員證；女生減時 44 秒 × 公里</td></tr>
+        <tr><td><b>毅行組</b> P</td><td class="num">6–12</td><td>以個人報名，可單一院校或跨校混編</td><td>至少一半隊員有救護員證；四天退賽不超過一人可得「毅行獎」</td></tr>
+        <tr><td><b>探索組</b> E</td><td>—</td><td>院校名義</td><td>58 km 體驗，不計排名；D2、D3 坐車到賽段中點出發</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>需要同步的規定</h3>
+    <ol class="clean">
+      <li><b>院校參賽資格採邀請／審核制</b>：須由院校認證組織向組委會書面申請。友26 院校名單中沒有台灣院校，台大EMBA 要先取得資格。</li>
+      <li><b>身份</b>：隊員須是商學院學員並附學籍證明，校友提供畢業證書，由領隊負責核查。</li>
+      <li><b>年齡 18–65 歲</b><span class="flag">戈5 先確認</span>：組隊前請先確認有興趣學長姐的年齡是否符合。</li>
+      <li><b>健康</b>：建議提供 180 天內體檢報告；全員必須做心臟平板運動測試並提交報告；心臟病、高血壓、糖尿病等疾病不能報名。</li>
+      <li><b>救護員證</b>：紅十字會或美國 AHA 證書皆可，要求依組別不同（見上表）。</li>
+      <li><b>支援名額</b>：每校最多 3 名免費領隊、1 位老師體驗；隨隊醫生或康復師與助理 30 人內 2 名，每多 20 人加 1 名；教練 1 名。</li>
+      <li><b>賽中紀律</b>：比賽期間（體驗日零時起到衝線）禁酒，營地禁菸；不得展示政治、宗教、種族相關訊息或旗幟，違者取消資格。</li>
+      <li><b>裝備與住宿</b>：半自主賽，須帶強制裝備（防風防水外套、急救毯、哨子、1L 水袋、800 大卡應急食品等）；營地提供大帳和防潮墊，自備睡袋。</li>
+      <li><b>保險</b>：主辦有安排賽事保險，須確認台灣參賽者是否適用及理賠方式。</li>
+      <li><b>報名費與截止日</b><span class="flag">待查</span>：手冊沒有寫，需要向組委會詢問。</li>
+    </ol>
+  </div>
+
+  <div class="box tint">
+    <h3>需要大家討論</h3>
+    <ul class="qs">
+      <li><span><b>要不要成立「中歐賽事組隊小組」</b>？誰當召集人？小組與戈友會的關係是什麼？</span></li>
+      <li><span><b>目標哪一屆</b>：友27（約 2027 年 4–5 月，距今不到半年）還是友28？</span></li>
+      <li><span><b>參加哪個組別</b>：毅行組可個人報名、跨校混編，探索組強度較低；接力與競速組要以院校名義，而且隊員只能參加一屆。</span></li>
+      <li><span><b>用什麼名義、誰當窗口</b>：章程宗旨有「對外代表台大EMBA參與國內外及兩岸各項戈友活動」，是否以戈友會名義申請？需不需要學校同意？</span></li>
+      <li><span><b>經費與帳務</b>：會費限用於「符合本會宗旨之活動」，要不要補助？帳務是否比照全國E馬的建議，與戈壁挑戰賽分開？</span></li>
+      <li><span><b>時程與人力</b>：中歐約在 5 月，戈壁挑戰賽在 10 月上旬，全國E馬在 12/1，一年三場賽事人力是否足夠？</span></li>
+      <li><span><b>招募對象</b>：只限戈5，還是開放其他屆一起組隊？</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ISSUE 3 -->
+<section id="election">
+  <div class="sec-head">
+    <div class="eyebrow">議題三</div>
+    <h2>2027 年常委確認及會長改選規劃</h2>
+    <p class="lead">本屆任期到 2026/12/31 結束。依章程，接下來要確認各屆 2027 年的常委，再由常委推選下屆會長。</p>
+  </div>
+
+  <div class="box">
+    <h3>時程</h3>
+    <ol class="steps">
+      <li class="now"><span class="when">11/23</span><span>常委會議：各屆確認 2027 年常委人選，交流會長人選方向。</span></li>
+      <li><span class="when">12/1–12/7</span><span>章程規定「每年 12 月第 1 週」公告戈委與會長改選。</span></li>
+      <li><span class="when">2027/1/1</span><span>新任委員、會長、副會長就任，任期一年（到 12/31），連選得連任。</span></li>
+      <li><span class="when">會員大會</span><span>新舊任會長、副會長與戈壁挑戰隊執行長交接，由舊任戈友會籌辦。</span></li>
+    </ol>
+  </div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>常委怎麼組成</h3>
+      <ul class="clean">
+        <li>委員至少 <b class="num">5</b> 名</li>
+        <li>每屆推派代表 <b class="num">1</b> 人，<b>最近四屆</b>推派 <b class="num">2</b> 人</li>
+        <li>可邀請學校代表 <b class="num">1</b> 人</li>
+      </ul>
+      <p class="small muted">目前戈14、戈1518、戈19、戈20 各有兩位，戈21 尚未推派。2027 年的「最近四屆」怎麼算（是否含戈21、戈14 是否回到一位），請會中確認。</p>
+    </div>
+    <div class="box">
+      <h3>會長與幹部怎麼產生</h3>
+      <ul class="clean">
+        <li><b>會長</b>：由當屆委員推選，須具 <b>A 隊或 B 隊完賽</b>資格</li>
+        <li><b>副會長</b>：授權會長從委員中選任 1 位</li>
+        <li><b>總幹事、戈壁挑戰隊領隊</b>各 1 人</li>
+        <li><b>全國E馬領隊</b>：由當屆會長邀約、指派</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box tint">
+    <h3>會前請各屆先想好</h3>
+    <ul class="qs">
+      <li><span><b>2027 年本屆常委</b>是續任，還是換人？最近四屆請準備兩位人選。</span></li>
+      <li><span><b>會長人選</b>有沒有想推薦的學長姐？（須 A 或 B 隊完賽）</span></li>
+      <li><span><b>戈21</b> 的常委由誰協助聯繫推派？</span></li>
+    </ul>
+  </div>
+  <p class="small muted">延伸提醒：章程附件「全國E馬補充說明」建議全國E馬另找承辦單位、帳務分開。新任會長就任前，可順帶確認 2027 年的安排。</p>
+</section>
+
+<!-- CHARTER QUICK REF -->
+<section id="charter">
+  <div class="sec-head">
+    <div class="eyebrow">章程速查</div>
+    <h2>戈友會組織章程（2024/10/30 修訂）</h2>
+  </div>
+  <div>
+    <details>
+      <summary>名稱及宗旨</summary>
+      <ul class="clean">
+        <li>全名「台大EMBA戈友會」</li>
+        <li>對外代表台大EMBA參與國內外及兩岸各項戈友活動</li>
+        <li>推動戈壁挑戰隊的籌備與組織</li>
+        <li>聯繫台大歷屆戈友；促進國際跨校戈友交流</li>
+      </ul>
+    </details>
+    <details>
+      <summary>會員、會費與權益</summary>
+      <ul class="clean">
+        <li>正式會員：台大EMBA在校生、校友及其眷屬，完成 A、B、C 隊並繳交會費</li>
+        <li>榮譽會員：曾參加戈壁挑戰賽的台大EMBA師長，免繳會費</li>
+        <li>會費每人 NT$3,000，另有贊助與捐款；用於符合本會宗旨的活動</li>
+        <li>在校生或校友有委員選舉與被選舉權；師長或眷屬可參與各項活動</li>
+      </ul>
+    </details>
+    <details>
+      <summary>委員會職責</summary>
+      <ul class="clean">
+        <li>推選下屆委員與會長、副會長</li>
+        <li>對外代表台大EMBA戈壁挑戰隊參與兩岸戈友會議</li>
+        <li>確認下一屆戈壁挑戰隊的執行策略與運作方向</li>
+        <li>舉辦活動、審核會費運用</li>
+        <li>傳達戈友會訊息到各屆，鼓勵各屆會員參與活動</li>
+      </ul>
+    </details>
+    <details>
+      <summary>主要活動</summary>
+      <p>挑戰隊招募、誓師大會、送機接機、慶功宴、會員大會、會員聯誼、跨校戈友聯誼、其他戈壁賽事活動。</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <span>資料來源：戈友會組織章程（2024/10/30 修訂）、2026 商學院戈壁友誼賽賽事手冊。</span>
+  <span>出席狀況截至 11/21，如有異動以群組通知為準。</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var el=document.getElementById('countdown'); if(!el) return;
+  var target=new Date('2026-11-23T18:30:00+08:00').getTime();
+  var diff=target-Date.now();
+  var day=86400000;
+  if(diff>0){
+    var d=Math.floor(diff/day);
+    el.textContent = d>=1 ? '距離開會還有 '+d+' 天' : '今天晚上見！';
+  } else if(diff>-4*3600000){
+    el.textContent='會議進行中';
+  } else {
+    el.textContent='會議已結束';
+  }
+})();
+</script>
+
+</body>
+</html>
