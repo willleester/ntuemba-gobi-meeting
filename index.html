@@ -112,6 +112,12 @@ details{background:var(--surface);border:1px solid var(--line);border-radius:12p
 details+details{margin-top:10px}
 summary{cursor:pointer;font-weight:700}
 details[open] summary{margin-bottom:10px}
+.propose{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+.propose-main{display:grid;gap:4px;min-width:0;flex:1 1 280px}
+.propose .k{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.propose .v{font-size:20px;font-weight:700}
+.btn{display:inline-block;background:var(--accent);color:var(--surface);text-decoration:none;font-weight:700;padding:12px 24px;border-radius:999px;white-space:nowrap}
+.btn:hover{filter:brightness(1.08)}
 footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:grid;gap:4px}
 </style>
 
@@ -142,6 +148,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
 
   <nav class="toc" aria-label="頁面目錄">
     <a href="#attend">出席狀況</a>
+    <a href="#propose">常委提案</a>
     <a href="#family">議題一 眷屬參與</a>
     <a href="#ceibs">議題二 中歐賽事組隊</a>
     <a href="#election">議題三 常委與會長改選</a>
@@ -166,6 +173,23 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
     </div>
   </div>
   <p class="small muted">若有異動，請直接告知會長或總幹事。</p>
+</section>
+
+<!-- PROPOSAL -->
+<section id="propose">
+  <div class="sec-head">
+    <div class="eyebrow">常委提案</div>
+    <h2>有想討論的事？填表排入議程</h2>
+    <p class="lead">除了下面三個議題，常委如有其他想在會中討論的事，請填寫提案單。會長彙整後排入議程，會前在群組公告。</p>
+  </div>
+  <div class="box propose">
+    <div class="propose-main">
+      <div class="k">截止時間</div>
+      <div class="v"><span class="num">11/21</span>（六）<span class="num">23:59</span></div>
+      <p class="small muted">要填：屆別、提案人、提案標題、背景與建議做法、希望討論多久；參考資料連結可不填。</p>
+    </div>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdXBteYTUaCQQ1fvE-_93DMWZ8MwcDENnimMtKyooDjaBHprQ/viewform" target="_blank" rel="noopener">填寫提案單</a>
+  </div>
 </section>
 
 <!-- ISSUE 1 -->
