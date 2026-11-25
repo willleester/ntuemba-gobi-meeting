@@ -146,7 +146,7 @@ details[open] summary{margin-bottom:10px}
 .act.wide{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
 .act.wide .act-ph{aspect-ratio:auto;min-height:200px}
 @media (max-width:760px){.act.wide{grid-template-columns:1fr}.act.wide .act-ph{aspect-ratio:16/9;min-height:0}}
-.album-wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
+.album-wide{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
 .album-top{display:flex;align-items:center}
 .album-shots{display:grid;grid-template-columns:1fr 1.7fr;grid-template-rows:1fr 1fr;gap:6px;padding:8px;background:var(--sand-soft);min-height:190px}
 .album-shots i{display:block;background:#fff center/contain no-repeat;border-radius:6px}
@@ -282,6 +282,15 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
         <div class="act-cost"><span>晴天、安執學長贊助</span></div>
       </div>
     </article>
+      <article class="act album-wide">
+      <div class="act-body">
+        <div class="album-top"><span class="act-date static">10.15</span><span class="tag">終身方案</span></div>
+        <h3>戈友會雲端相簿上線</h3>
+        <p>資訊長寶哥（王寶慶）建置戈友會專屬相簿，分「戈友會活動」「戈壁挑戰隊」「全國E馬」三本，戈21 照片陸續上傳；也請各屆協助上傳陳年照片和影片，把大家做過的事留下來。</p>
+        
+      </div>
+      <div class="album-shots"><i style="background-image:url('img/album-home.png')"></i><i style="background-image:url('img/album-gobi.png')"></i><i style="background-image:url('img/album-ge21.webp')"></i></div>
+    </article>
     <article class="act wide">
       <div class="act-ph"><i style="background-image:url('img/emara-2025.jpg');background-position:center;background-size:cover"></i><span class="act-date">12.05–06</span><span class="act-note">2025 年照片示意</span></div>
       <div class="act-body">
@@ -293,15 +302,6 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
       </div>
     </article>
   </div>
-  <article class="act album-wide">
-    <div class="act-body">
-      <div class="album-top"><span class="act-date static">10.15</span><span class="tag">終身方案</span></div>
-      <h3>戈友會雲端相簿上線</h3>
-      <p>資訊長寶哥（王寶慶）建置戈友會專屬相簿，分「戈友會活動」「戈壁挑戰隊」「全國E馬」三本，戈21 照片陸續上傳；也請各屆協助上傳陳年照片和影片，把大家做過的事留下來。</p>
-      
-    </div>
-    <div class="album-shots"><i style="background-image:url('img/album-home.png')"></i><i style="background-image:url('img/album-gobi.png')"></i><i style="background-image:url('img/album-ge21.webp')"></i></div>
-  </article>
 </section>
 
 <!-- PROPOSAL -->
