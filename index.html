@@ -143,6 +143,9 @@ details[open] summary{margin-bottom:10px}
 .act-cost{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12px;color:var(--muted)}
 .act-cost b{font-family:var(--f-num);font-size:20px;color:#B5462C;white-space:nowrap}
 .act-cost b.zero{font-family:var(--f-body);font-size:15px;color:var(--muted)}
+.act.wide{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.act.wide .act-ph{aspect-ratio:auto;min-height:200px}
+@media (max-width:760px){.act.wide{grid-template-columns:1fr}.act.wide .act-ph{aspect-ratio:16/9;min-height:0}}
 .album-wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr)}
 .album-top{display:flex;align-items:center}
 .album-shots{display:grid;grid-template-columns:1fr 1.7fr;grid-template-rows:1fr 1fr;gap:6px;padding:8px;background:var(--sand-soft);min-height:190px}
@@ -225,14 +228,13 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
     <p class="lead">第十三屆戈友會今年的主要活動，讓大家在討論議題前有個整體概念。</p>
   </div>
   <div class="acts">
-    <article class="act big">
-      <div class="act-ph"><i style="background-image:url('img/emara-2025.jpg');background-position:center;background-size:cover"></i><span class="act-date">08.27</span><span class="act-note">2025 年照片示意</span></div>
+    <article class="act">
+      <div class="act-ph"><i style="background-image:url('img/yt21-group.jpg');background-position:center;background-size:cover"></i><i style="background-image:url('img/yt21-trophy.jpg');background-position:50% 62%;background-size:cover"></i><span class="act-date">02.08</span></div>
       <div class="act-body">
-        <h3>2026 全國E馬</h3>
-        <p>邀請玉蝴蝶（許雅文）擔任總召；戈友會補助報名費、交通、餐費，隊員只負擔住宿。贊助：Coco 姐、安執學長、正大學長、瑟宜學姐、雅文學姐。</p>
-        <a class="act-link" href="https://willleester.github.io/ntuemba-2026e/" target="_blank" rel="noopener">全國E馬網站 ↗</a>
-        
-        
+        <h3>戈21 黃T日</h3>
+        <p>清晨不到 10 度，歷屆老戈友一起參加戈21 黃T 啟動儀式；戈友會晴天會長頒贈獎盃給戈21 阿帕次執行長，戈21 正式啟程。</p>
+
+
       </div>
     </article>
     <article class="act">
@@ -253,15 +255,6 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
         
       </div>
     </article>
-    <article class="act big">
-      <div class="act-ph"><i style="background-image:url('img/sendoff-21.jpg');background-position:center;background-size:cover"></i><span class="act-date">06.23</span></div>
-      <div class="act-body">
-        <h3>戈壁 20 周年・戈友黑 Polo 衫</h3>
-        <p>小羊設計師設計的通用紀念款；戈友會致贈戈5（16 件）、戈6（19 件）學長姐與師長等 20 件，各屆可加購。</p>
-        
-        <div class="act-cost"><span>致贈戈5、戈6、師長共 55 件</span></div>
-      </div>
-    </article>
     <article class="act">
       <div class="act-ph"><i style="background-image:url('img/finals-cheer.jpg');background-position:50% 55%;background-size:cover"></i><i style="background-image:url('img/finals-share.jpg');background-position:50% 40%;background-size:cover"></i><span class="act-date">06.06–07</span></div>
       <div class="act-body">
@@ -272,12 +265,31 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-si
       </div>
     </article>
     <article class="act">
+      <div class="act-ph"><i style="background-image:url('img/sendoff-21.jpg');background-position:center;background-size:cover"></i><span class="act-date">06.23</span></div>
+      <div class="act-body">
+        <h3>戈壁 20 周年・戈友黑 Polo 衫</h3>
+        <p>小羊設計師設計的通用紀念款；戈友會致贈戈5（16 件）、戈6（19 件）學長姐與師長等 20 件，各屆可加購。</p>
+        
+        <div class="act-cost"><span>致贈戈5、戈6、師長共 55 件</span></div>
+      </div>
+    </article>
+    <article class="act">
       <div class="act-ph"><i style="background-image:url('img/sendoff-foodtruck-poster.jpg');background-position:64% 33%;background-size:auto 270%"></i><i style="background-image:url('img/dunhuang-zhecheng.jpg');background-position:40% 55%;background-size:cover"></i><span class="act-date">09月・10月</span></div>
       <div class="act-body">
         <h3>戈21 送機・迎接</h3>
         <p>從出發到凱旋，老戈友一路相挺：</p>
         <ul class="act-items"><li><b>送機・餐車早餐</b><span class="d">09.27</span><span class=tag>晴天贊助</span><br>管院一號館門口，KD 餐車請戈21 和四十多位老戈友吃早餐</li><li><b>敦煌迎接・桃園接機</b><span class="d">10.04–06</span><span class=tag>安執學長贊助</span><br>會長在戈壁終點迎接戈21，拜會協助台大戈壁隊十年的哲誠學長（慶功宴攤位）；安執學長贊助接下來十年的完賽慶功宴餐費。10/6 老戈友到桃園機場接機</li></ul>
         <div class="act-cost"><span>晴天、安執學長贊助</span></div>
+      </div>
+    </article>
+    <article class="act wide">
+      <div class="act-ph"><i style="background-image:url('img/emara-2025.jpg');background-position:center;background-size:cover"></i><span class="act-date">12.05–06</span><span class="act-note">2025 年照片示意</span></div>
+      <div class="act-body">
+        <h3>2026 全國E馬</h3>
+        <p>邀請玉蝴蝶（許雅文）擔任總召；戈友會補助報名費、交通、餐費，隊員只負擔住宿。贊助：Coco 姐、安執學長、正大學長、瑟宜學姐、雅文學姐。</p>
+        <a class="act-link" href="https://willleester.github.io/ntuemba-2026e/" target="_blank" rel="noopener">全國E馬網站 ↗</a>
+        
+        
       </div>
     </article>
   </div>
